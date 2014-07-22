@@ -1,0 +1,5 @@
+
+class initialization:
+    def do( _, inf, sup, N, M):
+        raise NotImplementedError
+

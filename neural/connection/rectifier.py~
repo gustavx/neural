@@ -1,0 +1,5 @@
+
+class rectifier:
+    def do( _, W):
+        raise NotImplementedError
+

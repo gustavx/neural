@@ -1,0 +1,31 @@
+import neural
+
+
+class connection:
+    """
+    connection class holds the methods for the creation and rectification of
+    weights between layers. It depends on other three types of objects:
+    * creation  : For the initialization of the weights (zeros, random, etc).
+    * affinity  : For the connectivity of the weights (full, single, etc).
+    * rectifier : For the rectification of the weights (decay, normal, etc).
+    """
+    def __init__( _, creation  = neural.connection.creation(),
+                     affinity  = neural.connection.affinity(), 
+                     rectifier = neural.connection.rectifier()
+                ):
+        _.creation  = creation
+        _.affinity  = affinity
+        _.rectifier = rectifier
+
+    def weights( _, N, M):
+        """Returns an array of NxM for weights."""
+        W = _.creation.do( N, M)
+        W = _.affinity.do( W)
+        return W
+
+    def rectify( _, W):
+        """Returns a rectified copy of the weights W."""
+        rW = _.rectifier( W)
+        rW = _.affinity( rW)
+        return rW
+

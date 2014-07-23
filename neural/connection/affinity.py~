@@ -1,5 +1,0 @@
-
-class affinity:
-    def do( _, W):
-        raise NotImplementedError
-

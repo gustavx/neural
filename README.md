@@ -1,4 +1,3 @@
-==========
 NEURAL Lib
 ==========
 
@@ -11,11 +10,9 @@ Objetivo
 El principal interés de esta librería es brindar una forma práctica de trabajo con la mayoría de los modelos de RNA conocidos manteniendo una interfaz consistente para todos y objetos que auto-contengan los métodos necesarios para la funcionalidad del modelo.  Pero también se busca facilitar la experimentación con nuevos modelos que combinen distintos tipos de conexiones entre capas, funciones de activación, reglas de aprendizaje y métodos de entrenamiento.
 Para poder lograr todo esto la filosofía del diseño se basa en tres puntos:
 
-    * Modularidad
-    
-    * Homogeneidad
-    
-    * Flexibilidad
+* Modularidad
+* Homogeneidad
+* Flexibilidad
 
 Cada una de estas está intrínsecamente relacionadas con las demás, sin embargo es posible pensar en el objetivo individual de cada una.
 
@@ -45,7 +42,7 @@ Estructura del paquete
 
 Para tener una idea general de la organización particular de todos estos elementos se puede llegar entender mejor con un borrador de la estructura del paquete con todos sus módulos.
 
-::
+```
     neural/
         connection/
             __init__.py
@@ -139,7 +136,7 @@ Para tener una idea general de la organización particular de todos estos elemen
             plot: monitor
             prnt: monitor
             grph: monitor
-
+```
 
 * Faltan: trial, dataset, case, pattern, parameter
 

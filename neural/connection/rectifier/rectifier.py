@@ -2,6 +2,9 @@ from neural import num
 
 
 class rectifier:
+    """
+    rectifier class corrects the weights after they were updated.
+    """
     def do( _, W):
         return W
 

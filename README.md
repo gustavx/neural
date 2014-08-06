@@ -164,7 +164,7 @@ Por ejemplo, para crear una red de modo explícito en un solo paso:
             )
         )
 
-Para crear o agregar elementos a una red::
+Para crear o agregar elementos a una red:
  
     feed = neural.feed(
                 neural.connection.full( min=-0.1, max=0.1),
@@ -185,27 +185,35 @@ Para crear o agregar elementos a una red::
     net.feed_add( hl, ol, feed)
 
 
-O a más bajo nivel::
+O a más bajo nivel:
 
     net.topology.layer_add( neural.layer( 3, neural.model.unit.perceptron())
 
 
-Para cargar una red previamente guardada::
+Para cargar una red previamente guardada:
 
     net = neural.network()
     net.load( 'perc-2-3-1.net')
 
 
-Para crear un modelo de red predeterminado::
+Para crear un modelo de red predeterminado:
 
     net = neural.model.mlp( [2,3,1])
 
 
-Para modificar elementos de una red con otros propios::
+Para modificar elementos de una red con otros propios:
+
+    class square( neural.activation):
+        def function( _, X):
+            return X**2
+
+        def derivate( _, X):
+            return 2*X
 
     class experimental_unit( neural.model.unit.mcculloch_pitts):
-        def function( _, X):
-            return _.activation.function( _.activation.function( X) )
+        def __init__( _):
+            neural.model.unit.mcculloch_pitts.__init__( _)
+            _.activation = square()
 
     net = neural.model.mlp( [2,3,1] )
     net.topology.layers[1].unit = experimental_unit()
@@ -225,9 +233,15 @@ Esto permite crear objetos con nuevas combinaciones de funcionalidad sin necesid
 
 La librería tiene como dependencia únicamente a [NumPy](http://www.numpy.org/) y opcionalmente a [matplotlib](http://matplotlib.org/) y [VPython](http://vpython.org/).
 
->         Neural - Copyright (C) 2014
->        This program is free software. 
-> You can redistribute it and/or modify it under 
-> the terms of the [GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.txt).
->
-> @gustavx @FlyingPumba
+
+Licencia
+========
+
+[GNU General Public License 3.0](http://www.gnu.org/licenses/gpl-3.0.txt).
+
+
+<c>
+Neural - Copyright (C) 2014
+@gustavx 
+@FlyingPumba
+</c>

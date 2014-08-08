@@ -1,11 +1,15 @@
 
 class excitation:
+    """
+    excitation class provides the functionality to propagate the synaptic
+    information between layers (forward and backwards).
+    """
     def __init__( _):
         pass
 
-    def forw( X, W):
-        pass
+    def forw( _, X, W):
+        NotImplementedError
 
-    def back( W, Y):
-        pass
+    def back( _, W, Y):
+        NotImplementedError
 
